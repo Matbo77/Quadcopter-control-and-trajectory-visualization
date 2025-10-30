@@ -11,11 +11,8 @@
 <br>
 
 
-
 <!--<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/master/LICENSE"><img src="https://img.shields.io/github/license/abhisheknaiidu/awesome-github-profile-readme?color=2b9348" alt="License Badge"/></a> -->
 
-
-<i>Loved the project? Add it to your starred repo ! </i>
 
 </div>
 
@@ -28,4 +25,10 @@ Modelization, simulation and control of a quadcopter UAV, visualization of its t
 <img alt="Illustration" src="pictures/quadcopter_traj_anime.jpg"> </img>
 
 
-<i>List of functions</i>
+<!-- <i>List of functions</i>  -->
+
+
+<div align="center">
+
+<i>Loved the project? Add it to your starred repo ! </i>
+</div>
