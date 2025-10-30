@@ -19,7 +19,13 @@
 
 
 ### Contents:
-Modelization, simulation and control of a quadcopter UAV, visualization of its trajectory and tracking performance for different controlers (upcoming).
+- Modelization, simulation and control of a quadcopter UAV
+- Visualization of its trajectory and tracking performance 
+- Implementation of different nonlinear controlers (**upcoming**)
+- Development of state estimators based on noisy measurements and inputs, and performance assesment(**upcoming**)
+- Control based on the state estimates (**to do**)
+- Add perturbations (wind gust) and parametric uncertainties (**to do**)
+- Assess controlers robustness (**to do**)
 
 
 <img alt="Illustration" src="pictures/quadcopter_traj_anime.jpg"> </img>
@@ -28,7 +34,10 @@ Modelization, simulation and control of a quadcopter UAV, visualization of its t
 <!-- <i>List of functions</i>  -->
 
 
+
 <div align="center">
+<br> 
+<br> 
 
 <i> 🌟 Loved the project? Add it to your starred repo ! 🌟 </i>
 </div>
