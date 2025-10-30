@@ -39,5 +39,5 @@
 <br> 
 <br> 
 
-<i> 🌟 Loved the project? Add it to your **starred repo** ! 🌟 </i>
+<img src="pictures/uav3.png" width="50" height="50" alt="UAV"/> <i> 🌟 Loved the project? Add it to your **starred repo** ! 🌟 </i> <img src="pictures/uav3.png" width="50" height="50" alt="UAV"/>
 </div>
