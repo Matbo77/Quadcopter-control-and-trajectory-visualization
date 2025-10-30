@@ -6,7 +6,7 @@
 <div align="center">
 <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Badge"/>
 <img src="pictures/uav3.png" width="100" height="100" alt="UAV"/>
-
+➡️🚩✅
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
 <br>
 
@@ -22,7 +22,7 @@
 - Modelization, simulation and control of a quadcopter UAV
 - Visualization of its trajectory and tracking performance 
 - Implementation of different nonlinear controlers (**upcoming**)
-- Development of state estimators based on noisy measurements and inputs, and performance assesment(**upcoming**)
+- Development of state estimators based on noisy measurements and inputs, and performance assesment (**upcoming**)
 - Control based on the state estimates (**to do**)
 - Add perturbations (wind gust) and parametric uncertainties (**to do**)
 - Assess controlers robustness (**to do**)
@@ -39,5 +39,5 @@
 <br> 
 <br> 
 
-<i> 🌟 Loved the project? Add it to your starred repo ! 🌟 </i>
+<i> 🌟 Loved the project? Add it to your **starred repo** ! 🌟 </i>
 </div>
