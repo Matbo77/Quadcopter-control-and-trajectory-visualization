@@ -2,9 +2,8 @@
 # Quadcopter-control-and-trajectory-visualization
 
 
-
+### Goal:
 <div align="center">
-<img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Badge"/>
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
 ➡️🚩✅
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
@@ -38,6 +37,7 @@
 <div align="center">
 <br> 
 <br> 
-
+<img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Badge"/>
+<br> 
 <img src="pictures/uav3.png" width="50" height="50" alt="UAV"/> <i> 🌟 Loved the project? Add it to your **starred repo** ! 🌟 </i> <img src="pictures/uav3.png" width="50" height="50" alt="UAV"/>
 </div>
