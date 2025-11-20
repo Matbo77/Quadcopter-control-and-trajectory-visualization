@@ -32,6 +32,11 @@
 <!-- <i>List of functions</i>  -->
 
 
+## How to use it
+
+1. Add the entire folder to the Matlab path (addpath(genpath("path/folder")))
+2. Run the main script `quadcopter_command_main.m` using MATLAB to launch the simulation
+3. Run the script `plot3D_anime_body_frame.m` to launch the animation window desplaying the 3D trajectory of the UAV, its state evolution and the position reference to follow.
 
 <div align="center">
 <br> 
