@@ -1,7 +1,9 @@
 
 # Quadcopter-control-and-trajectory-visualization
 
-<img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Badge"/>
+<img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Repo"/>
+
+ <a href= "https://img.shields.io/badge/github-repo-blue?logo=github"> <img src="https://img.shields.io/badge/github-repo-blue?logo=github)" alt="GitHub Badge"/></a>
 
 ### Contents:
 - Modelization, simulation and control of a quadcopter UAV
@@ -19,7 +21,6 @@
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
 <br>
 
- <a href= "https://img.shields.io/badge/github-repo-blue?logo=github"> <img src="[https://img.shields.io/github/license/abhisheknaiidu/awesome-github-profile-readme?color=2b9348](https://img.shields.io/badge/github-repo-blue?logo=github)" alt="License Badge"/></a>
 
 <!--<a href="https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/master/LICENSE"><img src="https://img.shields.io/github/license/abhisheknaiidu/awesome-github-profile-readme?color=2b9348" alt="License Badge"/></a> -->
 
