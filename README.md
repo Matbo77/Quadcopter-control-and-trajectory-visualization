@@ -28,8 +28,7 @@
 
 
 </div>
-
-<img alt="Illustration" src="quadcopter_trajectory.gif"> </img>
+<img alt="Illustration" src="pictures/quadcopter_trajectory.gif" width="50%" height="50%"> </img>
 <img alt="Illustration" src="pictures/quadcopter_traj_anime.jpg"> </img>
 
 
