@@ -3,7 +3,10 @@
 
 <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Repo"/>
 
- <a href= "https://img.shields.io/badge/github-repo-blue?logo=github"> <img src="https://img.shields.io/badge/github-repo-blue?logo=github)" alt="GitHub Badge"/></a>
+ <a href= "https://img.shields.io/badge/github-repo-blue?logo=github"> <img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="GitHub Badge"/></a>
+
+<a href= "https://img.shields.io/badge/MATLAB-R_2022b25-orange"> <img src="https://img.shields.io/badge/MATLAB-R_2022b25-orange" alt="Matlab Badge"/></a>
+
 
 ### Contents:
 - Modelization, simulation and control of a quadcopter UAV
