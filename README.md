@@ -29,7 +29,7 @@
 
 </div>
 
-
+<img alt="Illustration" src="quadcopter_trajectory.gif"> </img>
 <img alt="Illustration" src="pictures/quadcopter_traj_anime.jpg"> </img>
 
 
