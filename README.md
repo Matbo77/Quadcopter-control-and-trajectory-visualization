@@ -5,7 +5,7 @@
 
  <a href= "https://img.shields.io/badge/github-repo-blue?logo=github"> <img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="GitHub Badge"/></a>
 <a href= "https://img.shields.io/badge/MATLAB-R_2022b-orange"> <img src="https://img.shields.io/badge/MATLAB-R_2022b-orange" alt="Matlab Badge"/></a>
-
+<a href= "https://img.shields.io/badge/License-MIT-yellow"> <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License Badge"/></a>
 
 ### Contents:
 - Modelization, simulation and control of a quadcopter UAV
