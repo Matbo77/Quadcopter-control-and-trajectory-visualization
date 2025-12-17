@@ -8,11 +8,9 @@
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
 
-$\LARGE{\color{blue}*\ast*}$
-
 
 ## Contents:
-- Modelization, simulation and control of a  <code style="color : red">quadcopter UAV</code> 
+- Modelization, simulation and control of a <span style="color:red;">quadcopter UAV</span>
 - Visualization of its trajectory and tracking performance 
 - Implementation of different nonlinear controlers (**upcoming**)
 - Development of state estimators based on noisy measurements and inputs, and performance assessment (**upcoming**)
@@ -49,7 +47,7 @@ $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
 ➡️🚩✅ 
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
-Follow the reference trajectory}  <span style="color:blue">*</span> with the best possible accuracy.
+Follow the reference trajectory <span style="color:blue; font-size:2em;">*</span> with the best possible accuracy.
 
 <br>
 
