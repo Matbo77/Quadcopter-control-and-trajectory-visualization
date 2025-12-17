@@ -8,6 +8,8 @@
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
 
+ <span style="color:red">cardinals</span>
+<span style="color:blue; font-size:2em;">*</span>
 
 ## Contents:
 - Modelization, simulation and control of a <span style="color:red;">quadcopter UAV</span>
