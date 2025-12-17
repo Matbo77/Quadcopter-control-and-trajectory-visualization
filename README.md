@@ -41,6 +41,10 @@ where:
   
 $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 
+## Control scheme
+
+
+<img alt="Control" src="pictures/quadcopter_control_loop.png" width="100%" height="100%"> </img>
 
 # Goal:
 <div align="center">
