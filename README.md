@@ -8,7 +8,7 @@
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
 
-$\LARGE {\color{blue}*\ast*}$
+$\LARGE{\color{blue}*\ast*}$
 
 
 ## Contents:
