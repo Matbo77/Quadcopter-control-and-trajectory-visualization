@@ -10,7 +10,7 @@
 
 ${\color{red}Color test \space your \space \color{green}.md \space file \space \color{blue}in \space Github}$
 
-${\color{blue}*}$
+$\LARGE {\color{blue}*}$
 
 ## Contents:
 - Modelization, simulation and control of a quadcopter UAV
