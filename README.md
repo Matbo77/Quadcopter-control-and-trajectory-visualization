@@ -7,10 +7,6 @@
 <a href= "https://img.shields.io/badge/MATLAB-R_2022b-orange"> <img src="https://img.shields.io/badge/MATLAB-R_2022b-orange" alt="Matlab Badge"/></a>
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
-
- <span style="color:red">cardinals</span>
-<span style="color:blue; font-size:2em;">*</span>
-
 ```diff
 - text in red
 ```
@@ -53,7 +49,7 @@ $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
 ➡️🚩✅ 
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
-Follow the reference trajectory <span style="color:blue; font-size:2em;">*</span> with the best possible accuracy.
+Follow the reference trajectory ** * ** <span style="color:blue; font-size:2em;">*</span> with the best possible accuracy.
 
 <br>
 
