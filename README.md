@@ -39,7 +39,13 @@ where:
 
 - Rotation speed control for each motor (quadcopter: 4 motors)
   
-$u =[\omega_1,\omega_2,\omega_3,\omega_4]$
+$u_\omega =[\omega_1,\omega_2,\omega_3,\omega_4]$
+
+To simplify we can consider command in torque:
+
+$u = [u_1,u_2,u_3,u_4]^\top = [T_B,\tau_{\phi},\tau_{\theta},\tau_{\psi}]^\top$,
+
+that will be converted into a command in rotation speed of each motor.
 
 ## Control loop scheme
 
