@@ -8,8 +8,6 @@
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
 
-${\color{red}Color test \space your \space \color{green}.md \space file \space \color{blue}in \space Github}$
-
 $\LARGE {\color{blue}*\ast\star}$
 
 ## Contents:
@@ -50,7 +48,7 @@ $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
 ➡️🚩✅
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
- Follow the reference trajectory ${\color{blue}*}$ with the best possible accuracy.
+ Follow the reference trajectory $${\color{blue}*}$$ with the best possible accuracy.
 <br>
 
 
