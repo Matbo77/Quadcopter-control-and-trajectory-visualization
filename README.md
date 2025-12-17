@@ -11,6 +11,10 @@
  <span style="color:red">cardinals</span>
 <span style="color:blue; font-size:2em;">*</span>
 
+```diff
+- text in red
+```
+
 ## Contents:
 - Modelization, simulation and control of a <span style="color:red;">quadcopter UAV</span>
 - Visualization of its trajectory and tracking performance 
