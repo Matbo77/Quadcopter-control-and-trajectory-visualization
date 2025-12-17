@@ -16,6 +16,18 @@
 - Add perturbations (wind gust) and parametric uncertainties (**to do**)
 - Assess controlers robustness (**to do**)
 
+
+The quadrotor is modeled using the full 6-DOF Newton–Euler equations (second law of Newton and Euler’s rotation equations), including nonlinear couplings, gyroscopic moments, and cross-inertia effects. 
+A reference trajectory is used to evaluate controller precision and robustness (**to do**).
+
+
+# Quadrotor System Overview
+
+# State vector 
+
+ $X = [x,y,z,\dot{x},\dot{y},\dot{z},\phi,\theta,\psi,\dot{\phi},\dot{\theta},\dot{\psi}]$
+
+
 ### Goal:
 <div align="center">
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
