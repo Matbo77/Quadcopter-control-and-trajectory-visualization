@@ -7,7 +7,7 @@
 <a href= "https://img.shields.io/badge/MATLAB-R_2022b-orange"> <img src="https://img.shields.io/badge/MATLAB-R_2022b-orange" alt="Matlab Badge"/></a>
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
-### Contents:
+## Contents:
 - Modelization, simulation and control of a quadcopter UAV
 - Visualization of its trajectory and tracking performance 
 - Implementation of different nonlinear controlers (**upcoming**)
@@ -40,7 +40,7 @@ where:
 $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 
 
-### Goal:
+# Goal:
 <div align="center">
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
 ➡️🚩✅
