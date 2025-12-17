@@ -25,8 +25,13 @@ A reference trajectory is used to evaluate controller precision and robustness (
 
 # State vector 
 
- $X = [x,y,z,\dot{x},\dot{y},\dot{z},\phi,\theta,\psi,\dot{\phi},\dot{\theta},\dot{\psi}]$
+ $X = [x,y,z,\dot{x},\dot{y},\dot{z},\phi,\theta,\psi,\dot{\phi},\dot{\theta},\dot{\psi}],$
+where:
 
+- $(x, y, z)$: position
+- $(\phi, \theta, \psi)$: roll, pitch, yaw
+- $\dot{x},\dot{y},\dot{z}$: translational velocity
+- $\dot{\phi},\dot{\theta},\dot{\psi}$: angular velocity
 
 ### Goal:
 <div align="center">
