@@ -23,15 +23,22 @@ A reference trajectory is used to evaluate controller precision and robustness (
 
 # Quadrotor System Overview
 
-# State vector 
+## State vector 
 
  $X = [x,y,z,\dot{x},\dot{y},\dot{z},\phi,\theta,\psi,\dot{\phi},\dot{\theta},\dot{\psi}],$
-where:
 
+where:
 - $(x, y, z)$: position
 - $(\phi, \theta, \psi)$: roll, pitch, yaw
 - $\dot{x},\dot{y},\dot{z}$: translational velocity
 - $\dot{\phi},\dot{\theta},\dot{\psi}$: angular velocity
+
+## Control input
+
+- Rotation speed control for each motor (quadcopter: 4 motors)
+  
+$ u =[\omega_1,\omega_2,\omega_3,\omega_4]$
+
 
 ### Goal:
 <div align="center">
