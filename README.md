@@ -46,7 +46,7 @@ To simplify we can consider command in torque that will be converted into a comm
 $u = [u_1,u_2,u_3,u_4]^\top = [T_B,\tau_{\phi},\tau_{\theta},\tau_{\psi}]^\top$,
 
 where:
-- $(T_B)$: total thrust
+- $T_B$: total thrust
 - $(\tau_{\phi},\tau_{\theta},\tau_{\psi})$: roll, pitch, yaw torques
 
 
