@@ -41,11 +41,15 @@ where:
   
 $u_\omega =[\omega_1,\omega_2,\omega_3,\omega_4]$
 
-To simplify we can consider command in torque:
+To simplify we can consider command in torque that will be converted into a command in rotation speed of each motor:
 
 $u = [u_1,u_2,u_3,u_4]^\top = [T_B,\tau_{\phi},\tau_{\theta},\tau_{\psi}]^\top$,
 
-that will be converted into a command in rotation speed of each motor.
+where:
+- $(T_B)$: total thrust
+- $(\tau_{\phi},\tau_{\theta},\tau_{\psi})$: roll, pitch, yaw torque
+
+
 
 ## Control loop scheme
 
