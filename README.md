@@ -10,6 +10,8 @@
 
 $\LARGE {\color{blue}*\ast\star}$
 
+$${ \text{reference trajectory} \color{blue}*}$$
+
 ## Contents:
 - Modelization, simulation and control of a quadcopter UAV
 - Visualization of its trajectory and tracking performance 
