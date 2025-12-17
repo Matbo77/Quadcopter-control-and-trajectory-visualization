@@ -37,7 +37,7 @@ where:
 
 - Rotation speed control for each motor (quadcopter: 4 motors)
   
-$ u =[\omega_1,\omega_2,\omega_3,\omega_4]$
+$u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 
 
 ### Goal:
