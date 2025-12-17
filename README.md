@@ -46,7 +46,9 @@ $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
 ➡️🚩✅ 
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
-Follow the reference trajectory **$\ast$** <span style="color:blue; font-size:2em;">*</span> with the best possible accuracy. <span style="color: blue; font-size: 24px;">*</span>
+Follow the reference trajectory *🔵  with the best possible accuracy. 
+ 
+<!-- <span style="color:blue; font-size:2em;">*</span> <span style="color: blue; font-size: 24px;">*</span> -->
 
 <br>
 
