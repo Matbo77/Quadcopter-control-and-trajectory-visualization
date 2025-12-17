@@ -20,8 +20,6 @@
 The quadrotor is modeled using the full 6-DOF Newton–Euler equations (second law of Newton and Euler’s rotation equations), including nonlinear couplings, gyroscopic moments, and cross-inertia effects. 
 A reference trajectory is used to evaluate controller precision and robustness (**to do**).
 
-$${\color{red}Color \space your \space \color{green}.md \space file \space \color{blue}in \space Github}$$
-${\color{red}Color test \space your \space \color{green}.md \space file \space \color{blue}in \space Github}$
 
 # Quadrotor System Overview
 
@@ -47,7 +45,7 @@ $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
 ➡️🚩✅
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
- Follow the reference trajectory $\color{blue}\ast$ with the best possible accuracy.
+ Follow the reference trajectory ${\color{blue}\ast}$ with the best possible accuracy.
 <br>
 
 
