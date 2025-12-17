@@ -29,8 +29,8 @@ A reference trajectory is used to evaluate controller precision and robustness (
 
 where:
 - $(x, y, z)$: position
-- $(\phi, \theta, \psi)$: roll, pitch, yaw
 - $\dot{x},\dot{y},\dot{z}$: translational velocity
+- $(\phi, \theta, \psi)$: roll, pitch, yaw
 - $\dot{\phi},\dot{\theta},\dot{\psi}$: angular velocity
 
 ## Control input
