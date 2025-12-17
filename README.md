@@ -7,6 +7,7 @@
 <a href= "https://img.shields.io/badge/MATLAB-R_2022b-orange"> <img src="https://img.shields.io/badge/MATLAB-R_2022b-orange" alt="Matlab Badge"/></a>
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
+<!-- <span style="color:blue; font-size:2em;">*</span> <span style="color: blue; font-size: 24px;">*</span> -->
 
 ## Contents:
 - Modelization, simulation and control of a <span style="color:red;">quadcopter UAV</span>
@@ -17,7 +18,6 @@
 - Add perturbations (wind gust) and parametric uncertainties (**to do**)
 - Assess controlers robustness (**to do**)
 
-**\***
 
 The quadrotor is modeled using the full 6-DOF Newton–Euler equations (second law of Newton and Euler’s rotation equations), including nonlinear couplings, gyroscopic moments, and cross-inertia effects. 
 A reference trajectory is used to evaluate controller precision and robustness (**to do**).
@@ -47,9 +47,8 @@ $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 <img src="pictures/uav3.png" width="25" height="25" alt="UAV"/>
 ➡️🚩✅ 
 <!-- <a href="https://twitter.com/abhisheknaiidu" ><img src="https://img.shields.io/twitter/follow/abhisheknaiidu.svg?style=social" /> </a> -->
-Follow the reference trajectory **\***🔵  with the best possible accuracy. 
- 
-<!-- <span style="color:blue; font-size:2em;">*</span> <span style="color: blue; font-size: 24px;">*</span> -->
+Follow the reference trajectory **\*** 🔵  with the best possible accuracy. 
+**\***
 
 <br>
 
