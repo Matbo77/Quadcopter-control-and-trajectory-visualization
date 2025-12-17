@@ -41,8 +41,7 @@ where:
   
 $u =[\omega_1,\omega_2,\omega_3,\omega_4]$
 
-## Control scheme
-
+## Control loop scheme
 
 <img alt="Control" src="pictures/quadcopter_control_loop.png" width="70%" height="70%"> </img>
 
