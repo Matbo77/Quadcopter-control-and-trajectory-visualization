@@ -76,3 +76,6 @@ legend("w_1","w_2","w_3","w_4")
 title("Commands rotation speed w")
 ylabel("w_i (rpm)")
 xlabel("Time (s)")
+
+% plot artificial angles and saturations
+

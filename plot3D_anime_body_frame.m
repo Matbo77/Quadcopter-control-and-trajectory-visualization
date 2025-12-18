@@ -40,16 +40,48 @@ angle_annot=annotation('textbox',[.85 .4 .2 .3],'String',txt_angle,'EdgeColor','
 txt_pos='Pos';
 pos_annot=annotation('textbox',[.85 .2 .2 .3],'String',txt_pos,'EdgeColor','none');
 
+
+txt_dist='Dist ref';
+dist_annot=annotation('textbox',[.85 .0 .2 .3],'String',txt_dist,'EdgeColor','none');
+
+
+
+% Define rotor positions relative to the drone's center (assuming a cross configuration)
+rotor_offset = 0.9; % Distance from the center to each rotor
+rotor_positions = [
+    rotor_offset, 0, 0;      % Rotor 1 (front)
+    0, rotor_offset, 0;      % Rotor 2 (right)
+    -rotor_offset, 0, 0;     % Rotor 3 (back)
+    0, -rotor_offset, 0;     % Rotor 4 (left)
+];    
+
+% Rotate rotor positions according to the drone's orientation
+rotor_positions_rotated = zeros(size(rotor_positions));
+
+% Define circle parameters
+circle_radius = 0.3; % Radius of the rotor circle
+num_circle_points = 20; % Number of points to draw the circle
+theta_circle = linspace(0, 2*pi, num_circle_points);
+
+% Circle points in the rotor's local frame (assuming the rotor is in the xy-plane)
+circle_points_local = [
+    circle_radius * cos(theta_circle);
+    circle_radius * sin(theta_circle);
+    zeros(1, num_circle_points)
+    ];
+
+
 end_draw = num_points; % 100; %num_points;
 draw_speed = 1;
 break_plot = 0;
 
-i = 1;
+i = 1;        
+
 
 % Traçage de la position et de l'orientation
 %for i = 1:draw_speed:end_draw   %num_points  %200
 while i <= end_draw     
-    txt = sprintf('Times: \n %.2f s',t(i));
+    txt = sprintf('Time: \n %.2f s',t(i));
     set(h_annot,'String',txt)
     
     txt_angle = sprintf(' Angle: \n \\phi = %.2f ° \n \\theta = %.2f ° \n \\psi = %.2f °',180/pi*Theta(1,i),180/pi*Theta(2,i),180/pi*Theta(3,i));
@@ -57,6 +89,9 @@ while i <= end_draw
 
     txt_pos = sprintf(' Pos: \n x = %.2f m \n y = %.2f m \n z = %.2f m',X(1,i),X(2,i),X(3,i));
     set(pos_annot,'String',txt_pos)
+
+    txt_dist = sprintf(' Dist ref: \n dx = %.2f m \n dy = %.2f m \n dz = %.2f m',X(1,i)-Xref(1,i),X(2,i)-Xref(2,i),X(3,i)-Xref(3,i));
+    set(dist_annot,'String',txt_dist)
 
     R_B2I = rot_mat_B2I(-Theta(:,i)); % inv(R_I2B)
     
@@ -103,9 +138,31 @@ while i <= end_draw
     quiver3(x(i), y(i), z(i), -arrow_y(1),-arrow_y(2),-arrow_y(3), 'g', 'LineWidth', 3);
 
 
-    % Trait pour former un vaisseau spatial
-    % quiver3(x(i), y(i), z(i), -arrow_x(1),-arrow_x(2),arrow_x(3), 'b', 'LineWidth', 3);    
-    % quiver3(x(i), y(i), z(i), -arrow_y(1),-arrow_y(2),arrow_y(3), 'g', 'LineWidth', 3);
+    % Circle for the rotors
+    for j = 1:4
+        rotor_positions_rotated(j, :) = (R_B2I * rotor_positions(j, :)')';
+    end
+    
+    % Translate rotor positions to the drone's current position
+    rotor_positions_global = rotor_positions_rotated + [x(i), y(i), z(i)];
+    
+    % Draw circles for each rotor
+    for j = 1:4
+    
+        % Rotate circle points according to the drone's orientation
+        circle_points_global = R_B2I * circle_points_local;
+    
+        % Translate circle points to the rotor's global position
+        circle_points_global = circle_points_global + rotor_positions_global(j, :)';
+    
+        % Plot the circle
+        plot3(circle_points_global(1, :), circle_points_global(2, :), circle_points_global(3, :), 'k-', 'LineWidth', 1.5);
+    end
+
+
+    % distance to ref
+    dist_coeff = linspace(0,1,10);
+    plot3(x(i) + dist_coeff*(Xref(1,i)-x(i)),y(i) + dist_coeff*(Xref(2,i)-y(i)),z(i) + dist_coeff*(Xref(3,i)-z(i)),'b--','LineWidth',1)
     
     % point reference
     plot3(Xref(1,i),Xref(2,i),Xref(3,i), 'b*');
@@ -132,12 +189,20 @@ while i <= end_draw
 
     
     draw_speed = 1 + floor(20*c_slider.Value);
+    % min and max speed
+
+    if i<5/dt
+        % export as GIF
+        exportgraphics(gcf,'quadcopter_trajectory.gif','Append',true);
+    end
 
     i = i + draw_speed;
     if i < end_draw 
         cla;
     end
+
 end
+
 
 
 
