@@ -43,7 +43,7 @@ $u_\omega =[\omega_1,\omega_2,\omega_3,\omega_4]$
 
 To simplify we can consider command in torque that will be converted into a command in rotation speed of each motor:
 
-$u = [u_1,u_2,u_3,u_4]^\top = [T_B,\tau_{\phi},\tau_{\theta},\tau_{\psi}]^\top$,
+$u = [u_1,u_2,u_3,u_4]^\top = [T_B,\tau_{\phi},\tau_{\theta},\tau_{\psi}]^\top,$
 
 where:
 - $T_B$: total thrust
@@ -89,5 +89,9 @@ where:
 <br> 
 <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Badge"/>
 <br> 
+ 
 <img src="pictures/uav3.png" width="50" height="50" alt="UAV"/> <i> 🌟 Loved the project? Add it to your **starred repo** ! 🌟 </i> <img src="pictures/uav3.png" width="50" height="50" alt="UAV"/>
 </div>
+
+
+  
