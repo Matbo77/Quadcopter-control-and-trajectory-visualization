@@ -1,9 +1,9 @@
 
-% Main file for modelization, simulation, command of a quadcopter UAV, and visualization 
+% Main file for modelization, simulation, command of a quadcopter UAV, and visualization
 % of its trajectory, tracking performance ...
 %
-% Matlab code developped by M. Borelle 
-% 
+% Matlab code developped by M. Borelle
+%
 % Version 2025
 %
 %
@@ -13,17 +13,16 @@ clear
 
 %warning("Verify no confusion in the code between theta and phi, order in state ")
 
-% addpath(genpath("D:\mborelle\Documents\MATLAB\Projet perso")) %ONERA
-% addpath(genpath("Documents/MATLAB/Projet perso")) % 
+% addpath(genpath("Documents/MATLAB/Projet perso")) %
 
 
 
 % State variables -> 12
-% [x,y,z,vx,vy,vz, theta,phi,psi, vtheta , vphi, vpsi] 
+% [x,y,z,vx,vy,vz, theta,phi,psi, vtheta , vphi, vpsi]
 
 % Input -> 4
 %
-% 
+%
 % commande vitesse de rotation de chaque moteur (4 moteur quadricopter)
 % [w1,w2,w3,w4]
 %
@@ -52,7 +51,7 @@ nu = 4;
 
 wsteady_sq = m*g/(4*k_f);
 
-%data  
+%data
 %global data perf;
 data.m = m;
 data.g = g;
@@ -89,13 +88,13 @@ omegadot_B = zeros(3,N);
 Xglob = [X;Xdot;Theta;Thetadot]; %global state vector
 
 %control parameters 2nd order dynamic placement
-% different tuning provides different properties (performance, stability, 
+% different tuning provides different properties (performance, stability,
 % energy consumption ...)
 xi_x = 1; %
 t5x = 2.0; % tps réponse 5% (en s)
 w_x = 4.75/t5x;
 
-xi_y = 1; 
+xi_y = 1;
 t5y = 2.0; % tps réponse 5% (en s)
 w_y = 4.75/t5y;
 
@@ -103,11 +102,11 @@ xi_z = 1; % sqrt(2)/2
 t5z = 3.0; % tps réponse 5% (en s)
 w_z = 4.75/t5z;
 
-xi_phi = 1; % 
+xi_phi = 1; %
 t5phi = 0.4; % tps réponse 5% (en s)
 w_phi = 4.75/t5phi;
 
-xi_theta = 1; % 
+xi_theta = 1; %
 t5theta = 0.4; % tps réponse 5% (en s)
 w_theta = 4.75/t5theta;
 
@@ -153,9 +152,9 @@ z_ref = 1*[5*ones(N_ref_step1,1); 5*ones(N_ref_step2-N_ref_step1,1) ; 2*ones(N-N
 Xref = zeros(12,N);
 Xref(1,:) = x_ref;
 Xref(2,:) = y_ref;
-Xref(3,:) = z_ref; 
-% Xref(7,:) = phi_ref; 
-% Xref(8,:) = theta_ref; 
+Xref(3,:) = z_ref;
+% Xref(7,:) = phi_ref;
+% Xref(8,:) = theta_ref;
 Xref(9,:) = psi_ref;  % yaw
 u = zeros(nu,N-1);
 u_1 = zeros(1,N-1);
@@ -172,32 +171,32 @@ wi_sq = zeros(nu,N-1);
 
 for k=1:N-1
 
-    %wi_sq = zeros(4,1); % input(t); 
+    %wi_sq = zeros(4,1); % input(t);
     %wi_sq(:,k) = wsteady_sq*[1.005 0.995 1.005 0.995]';  % yaw -> tau_psi
 
-    %wi_sq(:,k) = wsteady_sq*[0.98 1 1.02 1]'; % pitch -> tau_theta 
+    %wi_sq(:,k) = wsteady_sq*[0.98 1 1.02 1]'; % pitch -> tau_theta
 
     %wi_sq(:,k) = wsteady_sq*[1 1.02 1 0.98]';   % roll -> tau_phi
 
     %wi_sq = wsteady_sq*ones(4,1); % input to produce thrust that compensate gravity and stay steady
-    
-    
+
+
     %wi_sq_z = m/(4*k_f)*(g - 2*xi_z*w_z*Xdot(3,k) - w_z^2*(X(3,k)-z_ref(k)))*ones(4,1);
     % (0.8*k+N)/N*
-    
+
     % Control
 
-    % Command thrust according to z_ref and actual altitude 
+    % Command thrust according to z_ref and actual altitude
     %u_1(k) = m*g + k_D*Xglob(6,k) - m*(2*xi_z*w_z*Xglob(6,k) + w_z^2*(Xglob(3,k) - z_ref(k)));
-    
+
     % more sophisticated thrust command (without linearization)
     u_1(k) = 1/(cos(Xglob(8,k))*cos(Xglob(7,k)))*(m*g + k_D*Xglob(6,k) - m*(2*xi_z*w_z*Xglob(6,k) + w_z^2*(Xglob(3,k) - z_ref(k))));
-    
+
     u_1(k) = max(0,u_1(k)); % constraint u_1 >= 0
-    
-    % Convert position ref into angular ref 
+
+    % Convert position ref into angular ref
     [phi_ref,theta_ref] = input_Theta_from_position_ref(Xglob(:,k),Xref(:,k),u_1(k),perf,data);
-    
+
     % Artificial saturation on ref angle
     max_phi_ref = 35*pi/180;
     max_theta_ref = 35*pi/180;
@@ -205,18 +204,18 @@ for k=1:N-1
 %     max_theta_ref = 70*pi/180;
     theta_ref_sat =  sign(theta_ref)*min(abs(theta_ref),max_theta_ref);
     phi_ref_sat =  sign(phi_ref)*min(abs(phi_ref),max_phi_ref);
-    
+
     % Choose the desired orientation (psi)
     % orientation toward center (0,0)
-    psi_ref_k = atan2(X(2,k),X(1,k));
+    %psi_ref_k = atan2(X(2,k),X(1,k));
     % orientation toward target
-    %psi_ref_k = atan2(X(2,k)-Xref(2,k),X(1,k)-Xref(1,k));
+    psi_ref_k = atan2(X(2,k)-Xref(2,k),X(1,k)-Xref(1,k));
 
     Xref(7,k) = phi_ref_sat;
     Xref(8,k) = theta_ref_sat;
     Xref(9,k) = psi_ref_k;
 
-    
+
     % Command torques
     u(:,k) = torque_2nd_order_track_ref(Xglob(:,k),Xref(:,k),perf,data);
     wi_sq(:,k) = torque2motor_speed(u(:,k),data);
@@ -226,10 +225,10 @@ for k=1:N-1
     % Compute linear and angular accelerations.
     a(:,k) = quad_acceleration(wi_sq(:,k), Theta(:,k), Xdot(:,k), data);
     omegadot_B(:,k) = quad_angular_acceleration(wi_sq(:,k), omega_B(:,k), data);
-    
+
     % Dynamic propagation (discretize)
     omega_B(:,k+1) = omega_B(:,k) + dt * omegadot_B(:,k);
-    Thetadot(:,k+1) = omega2thetadot(omega_B(:,k+1), Theta(:,k)); 
+    Thetadot(:,k+1) = omega2thetadot(omega_B(:,k+1), Theta(:,k));
     Theta(:,k+1) = Theta(:,k) + dt * Thetadot(:,k+1);
 
     Xdot(:,k+1) = Xdot(:,k) + dt*a(:,k);
@@ -239,20 +238,21 @@ for k=1:N-1
 
 end
 
-% problème angle theta 
+% problème angle theta
 % et rotation drone
 % Euler angle ?
+
 
 % Suggestion improvements
 
 % add wind perturbation
 
 % add an observer that estimate the state
- 
+
 % add measurement noise
 
 % pb orientation switch/discontinuity with atan2 pi/-pi
-
+% normalize angles and angle differences between [-pi,pi]
 
 % T_B = thrust(wi_sq, k_f)
 % tau = torques(wi_sq, L, k_M, k_f)
@@ -286,7 +286,7 @@ warning("Max acceleration and speed computations") % with saturation
 
 
 
-% Reference traj tracking accuracy metric 
+% Reference traj tracking accuracy metric
 
 % RMSE_init = mean(sqrt(sum((X(:,1:10) - Xref(1:3,1:10)).^2)))
 

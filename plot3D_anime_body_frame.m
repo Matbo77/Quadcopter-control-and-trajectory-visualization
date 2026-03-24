@@ -8,7 +8,8 @@ num_points = N; % Nombre de points de données
 
 % Créer la figure 3D
 f = figure;
-f.Position = [400 200 700 650];
+%f.Position = [400 200 700 650];
+set(f,'Position',[100 100 50 20]); % for Octave / old Matlab
 hold on;
 grid on;
 axis equal;
@@ -18,9 +19,10 @@ view(80,20) % angle 3D view
 p = uipanel(f,'Position',[0.01 0.0 0.15 0.3]); %0.01 0.0 0.15 0.18  [x1 y1 x2 y2]
 uicontrol(p,'style','text','String',...
     'Speed','FontSize',10,'position',[15,90,75,100]); %'position',[.325, .91, .4, .08] %'units','normalized'
-c_slider = uicontrol(p,'Style','slider','position',[10,80,80,90]); %, 
+c_slider = uicontrol(p,'Style','slider','position',[10,80,80,90]); %,
 
-c_slider.Value = 0.1;
+%c_slider.Value = 0.1;
+set(c_slider,'Value',0.1); % for Octave / old Matlab
 
 ButtonH = uicontrol(p, 'Style', 'PushButton','position',[0,0,100,50], 'String', 'Stop Plot','Callback', @stopPlotButtonPushed, 'UserData', 0);
 
@@ -53,7 +55,7 @@ rotor_positions = [
     0, rotor_offset, 0;      % Rotor 2 (right)
     -rotor_offset, 0, 0;     % Rotor 3 (back)
     0, -rotor_offset, 0;     % Rotor 4 (left)
-];    
+];
 
 % Rotate rotor positions according to the drone's orientation
 rotor_positions_rotated = zeros(size(rotor_positions));
@@ -75,15 +77,15 @@ end_draw = num_points; % 100; %num_points;
 draw_speed = 1;
 break_plot = 0;
 
-i = 1;        
+i = 1;
 
 
 % Traçage de la position et de l'orientation
 %for i = 1:draw_speed:end_draw   %num_points  %200
-while i <= end_draw     
+while i <= end_draw
     txt = sprintf('Time: \n %.2f s',t(i));
     set(h_annot,'String',txt)
-    
+
     txt_angle = sprintf(' Angle: \n \\phi = %.2f ° \n \\theta = %.2f ° \n \\psi = %.2f °',180/pi*Theta(1,i),180/pi*Theta(2,i),180/pi*Theta(3,i));
     set(angle_annot,'String',txt_angle)
 
@@ -94,18 +96,18 @@ while i <= end_draw
     set(dist_annot,'String',txt_dist)
 
     R_B2I = rot_mat_B2I(-Theta(:,i)); % inv(R_I2B)
-    
+
     % Traçage flèche d'orientation  (quiver3)
     % ref inertiel
     plot3(0, 0, 0, 'ro');
-    quiver3(0,0,0, 0, 0.5, 0, 'r', 'LineWidth', 2); %r 
+    quiver3(0,0,0, 0, 0.5, 0, 'r', 'LineWidth', 2); %r
     quiver3(0,0,0, 0.5, 0, 0, 'b', 'LineWidth', 2); %c
     quiver3(0,0,0, 0, 0, 0.5, 'm', 'LineWidth', 2); %m
 
     % Position
     plot3(x(i), y(i), z(i), 'ro'); % Traçage du point de position
     plot3(x(1:i), y(1:i), z(1:i), 'r-'); % Traçage de la trajectoire
-    
+
     % Orientation
     length_arrow = 0.5; % Longueur de la flèche d'orientation
     arrow1_x = length_arrow * cos(psi(i));
@@ -113,13 +115,13 @@ while i <= end_draw
     arrow1_z = 0; % Pour une orientation dans le plan 3D
 
     arrow2_x = -length_arrow * sin(psi(i));
-    arrow2_y = length_arrow * cos(psi(i)); 
+    arrow2_y = length_arrow * cos(psi(i));
     arrow2_z = 0; % Pour une orientation dans le plan 3D
-    
+
 %     quiver3(x(i), y(i), z(i), arrow1_x, arrow1_y, arrow1_z, 'b', 'LineWidth', 2); % Traçage de la flèche d'orientation
-%     
+%
 %     quiver3(x(i), y(i), z(i), arrow2_x, arrow2_y, arrow2_z, 'g', 'LineWidth', 2);
-% 
+%
 %     quiver3(x(i), y(i), z(i), 0, 0, 0.5, 'k', 'LineWidth', 2);
 
     length_quad = 1;
@@ -128,13 +130,13 @@ while i <= end_draw
     arrow_y = length_quad * R_B2I * [0 ; 1; 0];
     arrow_z = length_quad * R_B2I * [0 ; 0; 1];
 
-    % Traçage du réferentiel du quadcopter 
-    quiver3(x(i), y(i), z(i),arrow_x(1),arrow_x(2),arrow_x(3), 'b', 'LineWidth', 3);    
+    % Traçage du réferentiel du quadcopter
+    quiver3(x(i), y(i), z(i),arrow_x(1),arrow_x(2),arrow_x(3), 'b', 'LineWidth', 3);
     quiver3(x(i), y(i), z(i), arrow_y(1),arrow_y(2),arrow_y(3), 'g', 'LineWidth', 3);
     quiver3(x(i), y(i), z(i), arrow_z(1),arrow_z(2),arrow_z(3), 'k', 'LineWidth', 2);
-    
+
     % Trait pour former le quadcopter
-    quiver3(x(i), y(i), z(i), -arrow_x(1),-arrow_x(2),-arrow_x(3), 'b', 'LineWidth', 3);    
+    quiver3(x(i), y(i), z(i), -arrow_x(1),-arrow_x(2),-arrow_x(3), 'b', 'LineWidth', 3);
     quiver3(x(i), y(i), z(i), -arrow_y(1),-arrow_y(2),-arrow_y(3), 'g', 'LineWidth', 3);
 
 
@@ -142,19 +144,19 @@ while i <= end_draw
     for j = 1:4
         rotor_positions_rotated(j, :) = (R_B2I * rotor_positions(j, :)')';
     end
-    
+
     % Translate rotor positions to the drone's current position
     rotor_positions_global = rotor_positions_rotated + [x(i), y(i), z(i)];
-    
+
     % Draw circles for each rotor
     for j = 1:4
-    
+
         % Rotate circle points according to the drone's orientation
         circle_points_global = R_B2I * circle_points_local;
-    
+
         % Translate circle points to the rotor's global position
         circle_points_global = circle_points_global + rotor_positions_global(j, :)';
-    
+
         % Plot the circle
         plot3(circle_points_global(1, :), circle_points_global(2, :), circle_points_global(3, :), 'k-', 'LineWidth', 1.5);
     end
@@ -163,7 +165,7 @@ while i <= end_draw
     % distance to ref
     dist_coeff = linspace(0,1,10);
     plot3(x(i) + dist_coeff*(Xref(1,i)-x(i)),y(i) + dist_coeff*(Xref(2,i)-y(i)),z(i) + dist_coeff*(Xref(3,i)-z(i)),'b--','LineWidth',1)
-    
+
     % point reference
     plot3(Xref(1,i),Xref(2,i),Xref(3,i), 'b*');
 
@@ -175,29 +177,33 @@ while i <= end_draw
     xlabel('X');
     ylabel('Y');
     zlabel('Z');
-    
-    c_slider.Value;
+
+    %c_slider.Value;
+
     % Pause pour animer le tracé
     pause(0.0001); %%0.1 0.001
-    
+
     %pause(0.1)
 
-    if ButtonH.UserData
+    %if ButtonH.UserData
+    if get(ButtonH, 'UserData') % for Octave / old Matlab
         break;
     end
     % Effacer le tracé précédent pour la prochaine itération
 
-    
-    draw_speed = 1 + floor(20*c_slider.Value);
+
+    %draw_speed = 1 + floor(20*c_slider.Value);
+    draw_speed = 1 + floor(20*get(c_slider,'Value')); % for Octave / old Matlab
+
     % min and max speed
 
-    if i<5/dt
-        % export as GIF
-        exportgraphics(gcf,'quadcopter_trajectory.gif','Append',true);
-    end
+##    if i<5/dt
+##        % export as GIF
+##        exportgraphics(gcf,'quadcopter_trajectory.gif','Append',true);
+##    end
 
     i = i + draw_speed;
-    if i < end_draw 
+    if i < end_draw
         cla;
     end
 
