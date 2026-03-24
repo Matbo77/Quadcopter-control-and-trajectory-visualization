@@ -1,5 +1,5 @@
 function u = torque_2nd_order_track_ref(Xglob,Xref,perf,data)
-% give the torque vector u for a tracking reference problem with 
+% give the torque vector u for a tracking reference problem with
 % some 2nd order dynamic performance
 
     m = data.m;
@@ -12,11 +12,12 @@ function u = torque_2nd_order_track_ref(Xglob,Xref,perf,data)
     Ixx = I(1,1);
     Iyy = I(2,2);
     Izz = I(3,3);
-    
+
     z = Xglob(3); % at time k
     z_ref = Xref(3);
     dz = Xglob(6);
 
+    % angle
     phi = Xglob(7);
     phi_ref = Xref(7);
     theta = Xglob(8);
@@ -24,6 +25,10 @@ function u = torque_2nd_order_track_ref(Xglob,Xref,perf,data)
     psi = Xglob(9);
     psi_ref = Xref(9);
 
+    diff_psi = psi - psi_ref;
+    %diff_psi = mod(psi - psi_ref + pi,2*pi) - pi;  % normalize angle between [-pi,pi]
+
+    % rotation speed
     dphi = Xglob(10);
     dtheta = Xglob(11);
     dpsi = Xglob(12);
@@ -40,12 +45,17 @@ function u = torque_2nd_order_track_ref(Xglob,Xref,perf,data)
 
 
     %wsteady_sq = m*g/(4*k_f);
-    
-       u_1 = m*g + k_D*dz - m*(2*xi_z*w_z*dz + w_z^2*(z - z_ref)) ; 
-       u_2 = Ixx*((Iyy-Izz)/Ixx*dtheta*dpsi - 2*xi_phi*w_phi*dphi - w_phi^2*(phi - phi_ref)) ; 
-       u_3 = Iyy*((Izz-Ixx)/Iyy*dphi*dpsi - 2*xi_theta*w_theta*dtheta - w_theta^2*(theta - theta_ref)) ; 
-       u_4 = Izz*((Ixx-Iyy)/Izz*dphi*dtheta - 2*xi_psi*w_psi*dpsi - w_psi^2*(psi - psi_ref)) ;
-        
+
+    %     %u_1(k) = 1/(cos(Xglob(8,k))*cos(Xglob(7,k)))*(m*g + k_D*Xglob(6,k) - m*(2*xi_z*w_z*Xglob(6,k) + w_z^2*(Xglob(3,k) - z_ref(k))));
+
+       % more sophisticated
+       u_1 = 1/(cos(phi)*cos(theta))*(m*g + k_D*dz - m*(2*xi_z*w_z*dz + w_z^2*(z - z_ref)));
+
+       %u_1 = m*g + k_D*dz - m*(2*xi_z*w_z*dz + w_z^2*(z - z_ref)) ;
+       u_2 = Ixx*((Iyy-Izz)/Ixx*dtheta*dpsi - 2*xi_phi*w_phi*dphi - w_phi^2*(phi - phi_ref)) ;
+       u_3 = Iyy*((Izz-Ixx)/Iyy*dphi*dpsi - 2*xi_theta*w_theta*dtheta - w_theta^2*(theta - theta_ref)) ;
+       u_4 = Izz*((Ixx-Iyy)/Izz*dphi*dtheta - 2*xi_psi*w_psi*dpsi - w_psi^2*(diff_psi)) ;
+
        u_1 = max(0,u_1); %saturation
 
     u = [u_1; u_2 ;u_3; u_4];
