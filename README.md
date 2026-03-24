@@ -5,7 +5,7 @@
 
  <a href= "https://img.shields.io/badge/github-repo-blue?logo=github"> <img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="GitHub Badge"/></a>
 <a href= "https://img.shields.io/badge/MATLAB-R_2022b-orange"> <img src="https://img.shields.io/badge/MATLAB-R_2022b-orange" alt="Matlab Badge"/></a>
-<a href= "https://img.shields.io/badge/Octave"> <img src="https://img.shields.io/badge/Octave" alt="Octave Badge"/></a>
+<a href= "https://img.shields.io/badge/Octave-R"> <img src="https://img.shields.io/badge/Octave-R" alt="Octave Badge"/></a>
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
 <!-- <span style="color:blue; font-size:2em;">*</span> <span style="color: blue; font-size: 24px;">*</span> -->
