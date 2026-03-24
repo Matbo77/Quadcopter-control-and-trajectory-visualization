@@ -5,6 +5,7 @@
 
  <a href= "https://img.shields.io/badge/github-repo-blue?logo=github"> <img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="GitHub Badge"/></a>
 <a href= "https://img.shields.io/badge/MATLAB-R_2022b-orange"> <img src="https://img.shields.io/badge/MATLAB-R_2022b-orange" alt="Matlab Badge"/></a>
+<a href= "https://img.shields.io/badge/MATLAB-R_2022b-orange"> <img src="https://img.shields.io/badge/Octave-orange" alt="Octave Badge"/></a>
 <a href= "https://img.shields.io/badge/License-Apache--2.0-yellow"> <img src="https://img.shields.io/badge/License-Apache--2.0-yellow" alt="License Badge"/></a>
 
 <!-- <span style="color:blue; font-size:2em;">*</span> <span style="color: blue; font-size: 24px;">*</span> -->
@@ -89,6 +90,9 @@ where:
 <br> 
 <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Badge"/>
 <br> 
+
+## References 
+- ["Model Based Control of Quadcopters", Spring Semester 2015-2016, MT Master Project EPFL, Martí POMÉS ARNAU](https://upcommons.upc.edu/server/api/core/bitstreams/b03e2a1f-d047-45d4-8b43-941f029e6729/content)  
  
 <img src="pictures/uav3.png" width="50" height="50" alt="UAV"/> <i> 🌟 Loved the project? Add it to your **starred repo** ! 🌟 </i> <img src="pictures/uav3.png" width="50" height="50" alt="UAV"/>
 </div>
