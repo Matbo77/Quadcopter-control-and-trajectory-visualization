@@ -13,7 +13,7 @@
 - Modelization, simulation and control of a <span style="color:red;">quadcopter UAV</span>
 - Visualization of its trajectory and tracking performance 
 - Implementation of different nonlinear controlers (**upcoming**)
-- Development of state estimators based on noisy measurements and inputs, and performance assessment (**upcoming**)
+- Development of state estimators based on noisy measurements and inputs, and performance assessment (**to do**)
 - Control based on the state estimates (**to do**)
 - Add perturbations (wind gust) and parametric uncertainties (**to do**)
 - Assess controlers robustness (**to do**)
